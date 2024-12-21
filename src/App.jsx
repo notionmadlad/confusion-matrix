@@ -58,7 +58,7 @@ function App() {
         />
       </div>
       <button onClick={calculateMetrics}>Calculate</button>
-      {results.accuracy && (
+      {results.accuracy !== "..." && (
         <div className="results">
           <p>
             <strong>Accuracy:</strong> {results.accuracy} or{" "}
