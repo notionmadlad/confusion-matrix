@@ -30,7 +30,7 @@ function App() {
   };
 
   const percentage = (key) =>
-    (key === "..." ? "..." : key * 100).toString() + "%";
+    (key === "..." ? "..." : key * 100).toFixed(1).toString() + "%";
 
   return (
     <div className="container">
