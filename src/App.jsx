@@ -29,6 +29,9 @@ function App() {
     });
   };
 
+  const percentage = (key) =>
+    (key === "..." ? "..." : key * 100).toString() + "%";
+
   return (
     <div className="container">
       <h2>Confusion Matrix Metrics Calculator</h2>
@@ -55,20 +58,26 @@ function App() {
         />
       </div>
       <button onClick={calculateMetrics}>Calculate</button>
-      <div className="results">
-        <p>
-          <strong>Accuracy:</strong> {results.accuracy} or {results.accuracy * 100}%
-        </p>
-        <p>
-          <strong>Precision:</strong> {results.precision} or {results.precision * 100}%
-        </p>
-        <p>
-          <strong>Recall:</strong> {results.recall} or {results.recall * 100}%
-        </p>
-        <p>
-          <strong>F1 Score:</strong> {results.f1Score} or {results.f1Score * 100}%
-        </p>
-      </div>
+      {results.accuracy && (
+        <div className="results">
+          <p>
+            <strong>Accuracy:</strong> {results.accuracy} or{" "}
+            {percentage(results.accuracy)}
+          </p>
+          <p>
+            <strong>Precision:</strong> {results.precision} or{" "}
+            {percentage(results.precision)}
+          </p>
+          <p>
+            <strong>Recall:</strong> {results.recall} or{" "}
+            {percentage(results.recall)}
+          </p>
+          <p>
+            <strong>F1 Score:</strong> {results.f1Score} or{" "}
+            {percentage(results.f1Score)}
+          </p>
+        </div>
+      )}
     </div>
   );
 }
