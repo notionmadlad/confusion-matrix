@@ -57,16 +57,16 @@ function App() {
       <button onClick={calculateMetrics}>Calculate</button>
       <div className="results">
         <p>
-          <strong>Accuracy:</strong> {results.accuracy}
+          <strong>Accuracy:</strong> {results.accuracy} or {results.accuracy * 100}%
         </p>
         <p>
-          <strong>Precision:</strong> {results.precision}
+          <strong>Precision:</strong> {results.precision} or {results.precision * 100}%
         </p>
         <p>
-          <strong>Recall:</strong> {results.recall}
+          <strong>Recall:</strong> {results.recall} or {results.recall * 100}%
         </p>
         <p>
-          <strong>F1 Score:</strong> {results.f1Score}
+          <strong>F1 Score:</strong> {results.f1Score} or {results.f1Score * 100}%
         </p>
       </div>
     </div>
